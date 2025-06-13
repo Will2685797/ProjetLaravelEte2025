@@ -1,0 +1,29 @@
+# === FRONTEND REACT ===
+kid-learn/node_modules/
+kid-learn/build/
+kid-learn/dist/
+kid-learn/.env.local
+kid-learn/.env.development.local
+kid-learn/.env.production.local
+kid-learn/.DS_Store
+
+# === BACKEND LARAVEL ===
+projet-emotion/vendor/
+projet-emotion/node_modules/
+projet-emotion/public/storage/
+projet-emotion/storage/*.key
+projet-emotion/storage/*.log
+projet-emotion/.env
+projet-emotion/.phpunit.result.cache
+projet-emotion/bootstrap/cache/*.php
+projet-emotion/.DS_Store
+
+# === OUTILS DEV / PHP LOCAL ===
+php-8.2.26-Win32-vs16-x64/
+
+# === SYSTEME / IDE ===
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
