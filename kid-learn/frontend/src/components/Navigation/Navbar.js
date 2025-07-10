@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
   return (
@@ -35,24 +36,23 @@ function Navbar() {
                 height: '100%', 
             }}
             >
-                <div style={{ display: 'flex', gap: '15px', padding: '10px 50px' , fontSize: '18px'}}>
+             <div style={{ display: 'flex', gap: '15px', padding: '10px 50px', fontSize: '18px' }}>
 
-                    
-                    <Link to="/profil" style={linkStyle}>Se connecter</Link>
+
+                <Link to="/profil"  style={{ ...linkStyle, whiteSpace: 'nowrap' }}>
+
+                    Se connecter
+
+                </Link>
 
                 </div>
 
-            <input
-                type="text"
-                placeholder="Recherche..."
-                style={{
-                padding: '5px 40px',
-                background : 'white',
-                border: 'none',
-                color: 'black',
+                <input
+                    type="text"
+                    placeholder="Recherche..."
+                    className="search-bar"
+                />
                 
-                }}
-            />
             </div>
       </div>
 

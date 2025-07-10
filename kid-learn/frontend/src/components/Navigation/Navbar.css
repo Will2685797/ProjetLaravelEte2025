@@ -1,0 +1,25 @@
+.search-bar {
+  width: 100%;
+  max-width: 250px;
+  padding: 6px 10px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background: white;
+  color: black;
+  transition: max-width 0.3s ease;
+}
+
+
+.search-bar {
+  width: 250px;
+  /* ou max-width: 250px si tu veux qu'elle s'adapte à l'espace disponible */
+}
+
+/* Limiter la barre de recherche sur cellulaire*/
+@media screen and (max-width: 600px) {
+  .search-bar {
+    max-width: 180px;
+  }
+}
