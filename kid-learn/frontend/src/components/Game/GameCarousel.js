@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import GameCard from './GameCard';
+import './GameCarousel.css';
 
 // Liste des jeux affichés dans le carrousel
 const games = [
@@ -11,6 +12,26 @@ const games = [
 ];
 
 export default function GameCarousel() {
+
+// const [visibleCount, setVisibleCount] = useState(3);
+
+
+//   useEffect(() => {
+//     const handleResize = () => {
+//       if (window.innerWidth <= 768) {
+//         setVisibleCount(1); // 📱 mobile
+//       } else {
+//         setVisibleCount(3); // 💻 desktop
+//       }
+//     };
+
+//   handleResize(); // Appelle au chargement
+//   window.addEventListener('resize', handleResize);
+//   return () => window.removeEventListener('resize', handleResize);
+// }, []);
+
+
+
   const visibleCount = 3;
   const totalGames = games.length;
 
@@ -159,6 +180,7 @@ export default function GameCarousel() {
   // Rendu du carrousel visuel
   return (
     <div
+     className="carousel-wrapper"
       style={{
         position: 'relative',
         width: '100%',
