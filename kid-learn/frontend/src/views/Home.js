@@ -2,17 +2,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Navbar from '../components/Navigation/Navbar';
-import GameList from '../components/Game/GameList';
 import GameCarousel from '../components/Game/GameCarousel'; 
+import CategoryGrid from '../components/Game/CategoryGrid';
+import BackgroundGradientEffect from '../effects/BackgroundGradientEffect';
+
+
 
 export default function Home() {
   return (
     <>
+    
+    
       {/* Couleur de fond (en dessous de tout) */}
       <div className="background-color-layer"></div>
-
       {/* Fond fixe */}
       <div className="background-image"></div>
+      
+      <div className="background-overlay"></div>
+
+      <BackgroundGradientEffect />
+        
 
       {/* Navbar */}
       <Navbar />
@@ -27,7 +36,16 @@ export default function Home() {
 
           {/* <GameList /> */}
           <GameCarousel />
+          
 
+          <div style={{ marginTop: '50px' }}>
+           
+
+            <CategoryGrid />
+            
+          
+          </div>
+          
         </div>
 
     </>

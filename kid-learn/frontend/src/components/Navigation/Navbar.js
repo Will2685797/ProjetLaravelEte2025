@@ -17,9 +17,9 @@ function Navbar() {
         >
             <div style={{ display: 'flex', alignItems: 'center' }}>
                 <img 
-                    src="/images/LogoAcceuil.png"
+                    src="/images/LogoAtelier.png"
                     alt="Logo"
-                    style={{ height: '60px', marginRight: '10px' }}
+                    style={{ height: '80px', marginRight: '10px' }}
                 />
                 <span style={{ fontSize: '20px', fontWeight: 'bold' }}>L’atelier Magique</span>
             </div>

@@ -13,26 +13,21 @@ const games = [
 
 export default function GameCarousel() {
 
-// const [visibleCount, setVisibleCount] = useState(3);
+  const [visibleCount, setVisibleCount] = useState(() => {
+    // Détermine le bon nombre dès le premier rendu
+    return window.innerWidth <= 768 ? 1 : 3;
+  });
+
+  useEffect(() => {
+    const handleResize = () => {
+      setVisibleCount(window.innerWidth <= 768 ? 1 : 3);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
 
-//   useEffect(() => {
-//     const handleResize = () => {
-//       if (window.innerWidth <= 768) {
-//         setVisibleCount(1); // 📱 mobile
-//       } else {
-//         setVisibleCount(3); // 💻 desktop
-//       }
-//     };
-
-//   handleResize(); // Appelle au chargement
-//   window.addEventListener('resize', handleResize);
-//   return () => window.removeEventListener('resize', handleResize);
-// }, []);
-
-
-
-  const visibleCount = 3;
   const totalGames = games.length;
 
    // Clone des cartes (...) = Spread Operator [3][4][5] [1][2][3][4][5] [1][2][3]

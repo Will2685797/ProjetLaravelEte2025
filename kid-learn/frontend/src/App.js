@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import EmotionGame from './components/EmotionGame';
+import CategoryPage from './pages/CategoryPage';
 
 function About() {
   return <h2>À propos de ce projet</h2>;
@@ -17,6 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element={<EmotionGame />} />
         <Route path="/about" element={<About />} />
+        <Route path="/activites/:category" element={<CategoryPage />} /> 
       </Routes>
     </Router>
   );
