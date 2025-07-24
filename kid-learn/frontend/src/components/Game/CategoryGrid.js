@@ -54,8 +54,9 @@ export default function CategoryGrid() {
   }, []);
 
   const handleClick = (type) => {
-    navigate(`/activites/${type}`);
-  };
+  console.log("Je redirige vers :", `/activites/${type}`);
+  navigate(`/activites/${type}`);
+};
 
   return (
     <div

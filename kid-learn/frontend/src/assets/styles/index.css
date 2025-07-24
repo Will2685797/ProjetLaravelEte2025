@@ -68,6 +68,7 @@ html, body {
   padding-bottom: 40px;
 }
 
+
 /* Ajuste la taille de l'image de background sur mobile */
 @media screen and (max-width: 768px) {
   .background-image {
@@ -90,5 +91,21 @@ html, body {
 @media (min-width: 1024px) {
   .category-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Ligne magique pour le footer */
+@keyframes glow {
+  0% {
+    opacity: 0.5;
+    box-shadow: 0 0 4px #cc99ff;
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 10px #cc99ff;
+  }
+  100% {
+    opacity: 0.5;
+    box-shadow: 0 0 4px #cc99ff;
   }
 }

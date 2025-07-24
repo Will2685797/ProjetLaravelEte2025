@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import EmotionGame from './components/EmotionGame';
-import CategoryPage from './pages/CategoryPage';
+import Home from './views/Home';
+import CategoryPage from './components/Game/CategoryPage';
 
 function About() {
   return <h2>À propos de ce projet</h2>;
@@ -16,7 +16,7 @@ function App() {
       </nav>
       
       <Routes>
-        <Route path="/" element={<EmotionGame />} />
+        <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/activites/:category" element={<CategoryPage />} /> 
       </Routes>

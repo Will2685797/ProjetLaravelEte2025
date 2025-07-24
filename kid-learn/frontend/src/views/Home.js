@@ -5,6 +5,7 @@ import Navbar from '../components/Navigation/Navbar';
 import GameCarousel from '../components/Game/GameCarousel'; 
 import CategoryGrid from '../components/Game/CategoryGrid';
 import BackgroundGradientEffect from '../effects/BackgroundGradientEffect';
+import Footer from "../components/Footers/FooterWL";
 
 
 
@@ -47,7 +48,7 @@ export default function Home() {
           </div>
           
         </div>
-
+       <Footer />
     </>
   );
 }
