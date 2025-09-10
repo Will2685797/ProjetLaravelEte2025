@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
-import './CategoryGrid.css'; // pour les classes fade-in
+import { Link } from "react-router-dom";
+import './CategoryGrid.css'; 
 
 const categories = [
   {
@@ -34,7 +34,7 @@ const categories = [
 ];
 
 export default function CategoryGrid() {
-  const navigate = useNavigate();
+  
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef();
 
@@ -53,10 +53,7 @@ export default function CategoryGrid() {
     return () => observer.disconnect();
   }, []);
 
-  const handleClick = (type) => {
-  console.log("Je redirige vers :", `/activites/${type}`);
-  navigate(`/activites/${type}`);
-};
+ 
 
   return (
     <div
@@ -65,23 +62,32 @@ export default function CategoryGrid() {
       style={styles.grid}
     >
       {categories.map((cat) => (
-        <div
-          key={cat.type}
-          style={{ ...styles.card, backgroundColor: cat.color }}
-          onClick={() => handleClick(cat.type)}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.transform = "scale(1.05)";
-            e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.2)";
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.transform = "scale(1)";
-            e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
-          }}
-        >
-          <div style={styles.emoji}>{cat.emoji}</div>
+      <Link
+        key={cat.type}
+        to={`/categories/${cat.type}`}
+        style={{
+          ...styles.card,
+          backgroundColor: cat.color,
+          display: "block",
+          textDecoration: "none",
+          color: "inherit",
+        }}
+       
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform = "scale(1.05)";
+          e.currentTarget.style.boxShadow = "0 6px 20px rgba(0,0,0,0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform = "scale(1)";
+          e.currentTarget.style.boxShadow = "0 4px 10px rgba(0,0,0,0.1)";
+        }}
+      >
+          <div style={styles.emoji} aria-hidden>
+            {cat.emoji}
+          </div>
           <h3>{cat.title}</h3>
           <p>{cat.description}</p>
-        </div>
+      </Link>
       ))}
     </div>
   );

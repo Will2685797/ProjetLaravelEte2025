@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function GameCard({ game, isDragging }) {
+
   const handleClick = (e) => {
     if (isDragging) {
       e.preventDefault();
@@ -10,7 +11,7 @@ export default function GameCard({ game, isDragging }) {
   };
 
   return (
-    <Link to={`/games/${game.id}`} onClick={handleClick} style={{ textDecoration: 'none' }}>
+    <Link to={`/activites/${game.type}`} onClick={handleClick} style={{ textDecoration: 'none' }}>
       <div style={{ padding: '10px' }}>
         <div
           style={{

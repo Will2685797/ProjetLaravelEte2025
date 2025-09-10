@@ -1,27 +1,37 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Home from './views/Home';
-import CategoryPage from './components/Game/CategoryPage';
+/* eslint-disable */
+import React from "react";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 
-function About() {
-  return <h2>À propos de ce projet</h2>;
-}
+// layouts
+import Admin from "./layouts/Admin";
+import Auth from "./layouts/Auth";
 
-function App() {
+// views
+import Landing from "./views/Landing";
+import Profile from "./views/Profile";
+import Home from "./views/Home";
+import CategoryPage from "./views/CategoryPage";
+
+export default function App() {
   return (
-    <Router> 
-      <nav style={{ padding: '1rem', backgroundColor: '#eee' }}>
-        <Link to="/" style={{ marginRight: 10 }}>Jeu d'émotions</Link>
-        <Link to="/about">À propos</Link>
-      </nav>
+    <>
       
       <Routes>
+        {/* routes de ton projet */}
+        <Route path="/categories/:category" element={<CategoryPage />} />
+
+        {/* add routes with layouts */}
+        <Route path="/admin/*" element={<Admin />} />
+        <Route path="/auth/*" element={<Auth />} />
+
+        {/* add routes without layouts */}
+        <Route path="/landing" element={<Landing />} />
+        <Route path="/profile" element={<Profile />} />
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/activites/:category" element={<CategoryPage />} /> 
+
+        {/* redirect all other paths to home */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
-    </Router>
+    </>
   );
 }
-
-export default App;

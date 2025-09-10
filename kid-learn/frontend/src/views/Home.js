@@ -1,6 +1,5 @@
 /*eslint-disable*/
 import React from "react";
-import { Link } from "react-router-dom";
 import Navbar from '../components/Navigation/Navbar';
 import GameCarousel from '../components/Game/GameCarousel'; 
 import CategoryGrid from '../components/Game/CategoryGrid';
