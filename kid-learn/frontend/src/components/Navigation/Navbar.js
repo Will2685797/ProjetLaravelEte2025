@@ -4,7 +4,7 @@ import './Navbar.css';
 
 function Navbar() {
   return (
-    <nav style={{ backgroundColor: '#4B0082', color: 'white' }}>
+    <nav className="navbar" >
       {/* Ligne 1 : Logo */}
         <div
             style={{

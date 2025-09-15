@@ -2,7 +2,11 @@
 
 @tailwind components;
 
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&family=Nunito:wght@400;600;700&display=swap');
+
 @tailwind utilities;
+
+:root { --space-bg: #0d0221; }
 
 
 /* Custom global styles */
@@ -25,11 +29,11 @@ html, body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color:#2D0050;
-  z-index: -2;
+  background: radial-gradient(ellipse at bottom, #2D0050 0%, var(--space-bg) 100%);
+  z-index: -4;
 }
 
-
+/* 
 
 .background-image {
   position: fixed;
@@ -37,12 +41,12 @@ html, body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-image: url("/public/images/imageFinal.png");
+  
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   z-index: -2;
-}
+} */
 
 
 
@@ -52,8 +56,8 @@ html, body {
   left: 0;
   width: 100%;
   height: 100vh;
-  background-color: #2D0050;
-  z-index: -1;
+  background: radial-gradient(ellipse at bottom, #2D0050 0%, var(--space-bg) 100%);
+  z-index: -2;
   opacity: 0; /* on commence transparent */
   transition: opacity 0.2s ease-out;
   
@@ -109,3 +113,65 @@ html, body {
     box-shadow: 0 0 4px #cc99ff;
   }
 }
+/*---------Navbar----------*/
+
+.navbar {
+  font-family: 'Nunito', sans-serif;
+  background-color: #4B0082;
+  color: white;
+}
+
+
+/* --- Ciel étoilé : base transparente, teinte mauve en ::before, étoiles en ::after --- */
+.starry-background{
+  position: fixed;
+  inset: 0;
+  z-index: -1;           /* au-dessus de -2 (image/overlay), sous le contenu (1) */
+  pointer-events: none;
+  background: transparent;
+  overflow: hidden;
+}
+
+/* 1) Teinte mauve douce (ne masque rien) */
+.starry-background::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  /* Voile radial PARTIEL : mauve → transparent, pour “teinter” le bas de l’écran */
+  background:
+    radial-gradient(ellipse at bottom,
+      rgba(75, 0, 130, 0.45) 0%,    /* #4B0082 avec alpha (mauve lumineux) */
+      rgba(75, 0, 130, 0.25) 35%,
+      rgba(13, 2, 33, 0.00) 70%     /* se fond dans ton --space-bg */
+    );
+  mix-blend-mode: screen;          /* éclaire le fond sans l’écraser */
+  pointer-events: none;
+}
+
+.starry-background::after {
+  content:"";
+  position:absolute;
+  top:-10%; left:-10%;
+  width:120%; height:120%;
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, #ffffff, transparent),
+    radial-gradient(2px 2px at 40px 70px, #fffacd, transparent),
+    radial-gradient(2.5px 2.5px at 90px 40px, #ff69b4, transparent),
+    radial-gradient(1.5px 1.5px at 160px 120px, #87cefa, transparent),
+    radial-gradient(2px 2px at 200px 150px, #ffffff, transparent),
+    radial-gradient(3px 3px at 250px 80px, #aaf0d1, transparent);
+  background-size: 250px 250px;
+  opacity: 0.75;
+  animation: twinkle 12s linear infinite;  /* ← animation plus lente et continue */
+  mix-blend-mode: screen;
+}
+
+@keyframes twinkle {
+  0%   { opacity:0.8; background-position: 0 0; }
+  25%  { opacity:0.4; background-position: -20px 30px; }
+  50%  { opacity:0.7; background-position: -40px 60px; }
+  75%  { opacity:0.5; background-position: -20px 30px; }
+  100% { opacity:0.8; background-position: 0 0; }
+}
+
+
