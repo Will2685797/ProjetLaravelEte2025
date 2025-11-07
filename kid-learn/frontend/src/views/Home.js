@@ -12,58 +12,42 @@ export default function Home() {
   return (
     <>
     
-    
       {/* Couleur de fond (en dessous de tout) */}
       <div className="background-color-layer"></div>
 
       <div className="starry-background" />
-      {/* Fond fixe */}
-      <div className="background-image"></div>
       
       <div className="background-overlay"></div>
 
       <BackgroundGradientEffect />
         
-
       {/* Navbar */}
       <Navbar />
 
       {/* Contenu principal : jeux */}
 
-      <img 
-        src="/images/constelation.png" 
-        alt="Fiole magique" 
-        style={{ 
-          position: "absolute", 
-          top: "200px", 
-          left: "25%", 
-          transform: "translateX(-50%)",
-          width: "300px",
-          zIndex: -3
-        }} 
-/>
+        <img
+          src="/images/constelation.png"
+          alt="Fiole magique"
+          className="constellation-image"
+        />
 
         <div className="main-content">
-
-          
 
           <h1 style={{ textAlign: 'center', color: 'black', marginBottom: '30px' }}>
             Découvre nos jeux magiques ✨
           </h1>
 
-          {/* <GameList /> */}
           <GameCarousel />
           
-
           <div style={{ marginTop: '50px' }}>
            
-
             <CategoryGrid />
             
-          
           </div>
           
         </div>
+        
        <Footer />
     </>
   );

@@ -1,0 +1,120 @@
+/* Variables simples (facultatif) */
+:root {
+  --violet: #4B0082;
+  --violet-dark: #2E004D;
+  --violet-hover: #6A0DAD;
+  --card-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Ta classe existante pour le fond */
+.background-color {
+  background-color: var(--violet-dark);
+}
+
+/* Conteneur gradient doux derrière la carte */
+.show-page {
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #E6E0FF, #FDE2FF);
+}
+
+/* Carte */
+.show-card {
+  max-width: 900px;
+  width: 100%;
+  background: #fff;
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+  text-align: center;
+}
+
+/* Image */
+.show-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Titre + description */
+.show-title {
+  color: var(--violet);
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+}
+
+.show-desc {
+  font-size: 1.1rem;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Bouton primaire */
+.btn-primary {
+  background: var(--violet);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background .25s ease, transform .15s ease, box-shadow .2s ease;
+  box-shadow: 0 10px 20px rgba(75,0,130,0.25);
+}
+.btn-primary:hover {
+  background: var(--violet-hover);
+  transform: translateY(-2px);
+}
+
+/* Lien retour */
+.link-back {
+  color: var(--violet);
+  text-decoration: underline;
+}
+
+
+/*------------------------------------------------------------------------*/
+
+
+.background-color-layer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at bottom, #2D0050 0%, var(--space-bg) 100%);
+  z-index: -4;
+}
+
+.show-image-container {
+  margin: 20px auto;
+  padding: 10px;
+  width: 90%;
+  max-width: 800px;
+  background-color: transparent;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.show-image {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 
+    0 0 25px rgba(155, 80, 255, 0.3),  /* halo violet */
+    0 0 40px rgba(255, 100, 255, 0.15); /* halo rose pâle */
+}
+.magic-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.8rem;
+  color: #fff;
+  text-shadow: 0 0 10px rgba(180, 90, 255, 0.7);
+  letter-spacing: 1px;
+  text-align: center;
+}

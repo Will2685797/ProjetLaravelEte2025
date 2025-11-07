@@ -11,6 +11,7 @@ import Landing from "./views/Landing";
 import Profile from "./views/Profile";
 import Home from "./views/Home";
 import CategoryPage from "./views/CategoryPage";
+import GameShow from "./views/GameShow";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
       <Routes>
         {/* routes de ton projet */}
         <Route path="/categories/:category" element={<CategoryPage />} />
+        <Route path="/games/:id" element={<GameShow />} />
 
         {/* add routes with layouts */}
         <Route path="/admin/*" element={<Admin />} />

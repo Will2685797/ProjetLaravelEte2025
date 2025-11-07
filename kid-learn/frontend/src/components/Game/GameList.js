@@ -1,7 +1,9 @@
+// src/components/GameList.js
 import React from 'react';
 import GameCard from './GameCard';
 
-// ✅ Ceci est la base de données centrale des jeux
+
+// ✅ Liste centrale des jeux (avec les bonnes images)
 const games = [
   {
     id: 1,
@@ -15,30 +17,37 @@ const games = [
     title: 'Les Émotions',
     type: 'emotion',
     description: 'Apprends à reconnaître les émotions en t’amusant.',
-    image_url: '/images/imageAcceuil2.png',
+    image_url: '/images/JeuxEmotion.png',
   },
   {
     id: 3,
     title: 'Programmation Fun',
     type: 'coding',
     description: 'Découvre les bases de la programmation.',
-    image_url: '/images/imageJeux1.png',
+    image_url: '/images/progMagique.png',
   },
   {
     id: 4,
     title: 'Jeu des Formes',
-    type: 'logic',
+    type: 'math',
     description: 'Apprends à reconnaître les formes géométriques.',
-    image_url: '/images/imageAcceuil4.png',
+    image_url: '/images/JeuxForme.png',
+  },
+  {
+    id: 5,
+    title: 'Jeu 5',
+    type: 'fun',
+    description: 'Description du jeu 5.',
+    image_url: '/images/imageAcceuil5.png',
   },
 ];
 
-// ✅ Permet à d'autres fichiers d'accéder à cette liste
+// ✅ Fonction pour récupérer tous les jeux
 export function getAllGames() {
   return games;
 }
 
-// ✅ Ce composant accepte une liste de jeux en props
+// ✅ Composant visuel (affiche une grille de GameCard)
 export default function GameList({ games }) {
   return (
     <div

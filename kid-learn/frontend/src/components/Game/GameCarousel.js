@@ -1,15 +1,11 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import GameCard from './GameCard';
 import './GameCarousel.css';
+import { getAllGames } from './GameList';
+
 
 // Liste des jeux affichés dans le carrousel
-const games = [
-  { id: 1, title: 'Addition Magique', type: 'math', description: 'Un jeu amusant pour apprendre l’addition.', image_url: '/images/additionMagique.png' },
-  { id: 2, title: 'Les Émotions', type: 'emotion', description: 'Apprends à reconnaître les émotions En tamusant.', image_url: '/images/JeuxEmotion.png' },
-  { id: 3, title: 'Programmation Fun', type: 'coding', description: 'Découvre les bases de la programmation.', image_url: '/images/progMagique.png' },
-  { id: 4, title: 'Jeu des Formes', type: 'math', description: 'Apprends à reconnaître les formes géométriques.', image_url: '/images/JeuxForme.png' },
-  { id: 5, title: 'Jeu 5', type: 'fun', description: 'Description du jeu 5.', image_url: '/images/imageAcceuil5.png' },
-];
+const games = getAllGames();
 
 export default function GameCarousel() {
 

@@ -11,7 +11,7 @@ export default function GameCard({ game, isDragging }) {
   };
 
   return (
-    <Link to={`/activites/${game.type}`} onClick={handleClick} style={{ textDecoration: 'none' }}>
+    <Link to={`/games/${game.id}`} onClick={handleClick} style={{ textDecoration: 'none' }}>
       <div style={{ padding: '10px' }}>
         <div
           style={{
